@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ScolarPay | Espace Parent</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 min-h-screen flex flex-col">
+
+<div class="flex flex-grow">
+
+  <!-- MENU LATÉRAL -->
+  <aside class="bg-blue-600 text-white w-64 flex flex-col min-h-screen">
+    <div class="p-6 flex items-center gap-3 border-b border-blue-500">
+      <img src="logo.jpg" class="w-12 h-12 rounded-full object-cover">
+      <span class="text-2xl font-bold tracking-wide">ScolarPay</span>
+    </div>
+    <nav class="flex flex-col gap-3 p-6 flex-grow">
+      <button onclick="showSection('tableau')" class="text-left px-4 py-2 rounded hover:bg-blue-500 transition">Tableau de bord</button>
+      <button onclick="showSection('enfants')" class="text-left px-4 py-2 rounded hover:bg-blue-500 transition">Mes enfants</button>
+      <button onclick="showSection('notes')" class="text-left px-4 py-2 rounded hover:bg-blue-500 transition">Notes</button>
+      <button onclick="showSection('paiement')" class="text-left px-4 py-2 rounded hover:bg-blue-500 transition">Effectuer un paiement</button>
+      <button onclick="showSection('historique')" class="text-left px-4 py-2 rounded hover:bg-blue-500 transition">Historique</button>
+      <button onclick="showSection('documents')" class="text-left px-4 py-2 rounded hover:bg-blue-500 transition">Documents</button>
+      <button onclick="showSection('profil')" class="text-left px-4 py-2 rounded hover:bg-blue-500 transition">Profil</button>
+    </nav>
+    <a href="login.html" class="px-4 py-2 text-center hover:bg-blue-500">Déconnexion</a>
+  </aside>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="flex-grow p-8">
+    
+    <!-- TABLEAU DE BORD -->
+    <section id="tableau" class="hidden">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Tableau de bord</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-blue-600">
+          <h3 class="font-semibold mb-2">Frais de scolarité</h3>
+          <p class="text-gray-600">Total : 150 000 FCFA</p>
+          <p class="text-green-600 font-bold">Payé : 75 000 FCFA</p>
+          <p class="text-red-600">Reste : 75 000 FCFA</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-blue-600">
+          <h3 class="font-semibold mb-2">Frais d’inscription</h3>
+          <p class="text-gray-600">Total : 50 000 FCFA</p>
+          <p class="text-green-600 font-bold">Payé : 50 000 FCFA</p>
+          <p class="text-red-600">Reste : 0 FCFA</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-blue-600">
+          <h3 class="font-semibold mb-2">Activités</h3>
+          <p class="text-gray-600">Total : 30 000 FCFA</p>
+          <p class="text-green-600 font-bold">Payé : 10 000 FCFA</p>
+          <p class="text-red-600">Reste : 20 000 FCFA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MES ENFANTS -->
+    <section id="enfants" class="hidden">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Mes enfants</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-blue-600">
+          <h3 class="font-semibold mb-2">Jean Dupont</h3>
+          <p>Classe : 3ème A</p>
+          <p>Filière : Science</p>
+          <p>Note moyenne : 15.5 / 20</p>
+          <p>Frais restants : 50 000 FCFA</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-blue-600">
+          <h3 class="font-semibold mb-2">Marie Dupont</h3>
+          <p>Classe : 2nde B</p>
+          <p>Filière : Lettres</p>
+          <p>Note moyenne : 16.2 / 20</p>
+          <p>Frais restants : 75 000 FCFA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes" class="hidden">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Notes par enfant</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-blue-600">
+          <h3 class="font-semibold mb-2">Jean Dupont</h3>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Mathématiques : 16/20</li>
+            <li>Français : 14/20</li>
+            <li>Physique : 15/20</li>
+            <li>Histoire : 16/20</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-blue-600">
+          <h3 class="font-semibold mb-2">Marie Dupont</h3>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Mathématiques : 15/20</li>
+            <li>Français : 17/20</li>
+            <li>Histoire : 16/20</li>
+            <li>Géographie : 17/20</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIEMENT -->
+    <section id="paiement" class="hidden">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Effectuer un paiement</h2>
+      <div class="bg-white p-6 rounded-xl shadow max-w-md">
+        <form class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-1 font-medium">Sélectionner un enfant</label>
+            <select class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option>Jean Dupont</option>
+              <option>Marie Dupont</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-1 font-medium">Type de paiement</label>
+            <select class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option>Frais de scolarité</option>
+              <option>Frais d’inscription</option>
+              <option>Activités</option>
+              <option>Cours à rattraper</option>
+              <option>Pension / Hébergement</option>
+              <option>Autres frais</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-1 font-medium">Mode de paiement</label>
+            <select class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option>MTN Mobile Money</option>
+              <option>Orange Money</option>
+              <option>Carte bancaire</option>
+              <option>Espèces</option>
+              <option>Virement bancaire</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-1 font-medium">Montant</label>
+            <input type="number" placeholder="Montant à payer" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div class="flex gap-2">
+            <button type="submit" class="flex-1 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Valider le paiement</button>
+            <button type="button" class="flex-1 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition">Annuler le paiement</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- HISTORIQUE -->
+    <section id="historique" class="hidden">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Historique des paiements</h2>
+      <div class="bg-white p-6 rounded-xl shadow overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b">
+              <th class="py-2 px-4">Date</th>
+              <th class="py-2 px-4">Enfant</th>
+              <th class="py-2 px-4">Type</th>
+              <th class="py-2 px-4">Montant</th>
+              <th class="py-2 px-4">Mode</th>
+              <th class="py-2 px-4">Statut</th>
+              <th class="py-2 px-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition">
+              <td class="py-2 px-4">10/01/2025</td>
+              <td>Jean Dupont</td>
+              <td>Frais de scolarité</td>
+              <td>25 000 FCFA</td>
+              <td>MTN Mobile Money</td>
+              <td class="text-green-600 font-bold">Payé</td>
+              <td class="flex gap-2">
+                <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Supprimer</button>
+                <button class="bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700">PDF</button>
+              </td>
+            </tr>
+            <tr class="border-b bg-white hover:bg-gray-50 transition">
+              <td class="py-2 px-4">15/02/2025</td>
+              <td>Marie Dupont</td>
+              <td>Activités</td>
+              <td>10 000 FCFA</td>
+              <td>Espèces</td>
+              <td class="text-red-600 font-bold">Reste</td>
+              <td class="flex gap-2">
+                <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Supprimer</button>
+                <button class="bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700">PDF</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section id="documents" class="hidden">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Documents reçus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+          <div>
+            <p class="font-semibold">Reçu de paiement</p>
+            <p class="text-sm text-gray-600">Jean Dupont – 10/01/2025</p>
+          </div>
+          <button class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">Télécharger</button>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+          <div>
+            <p class="font-semibold">Convocation officielle</p>
+            <p class="text-sm text-gray-600">Marie Dupont – 15/02/2025</p>
+          </div>
+          <button class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">Télécharger</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section id="profil" class="hidden">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Profil</h2>
+      <div class="bg-white p-6 rounded-xl shadow max-w-md space-y-4">
+        <div class="flex items-center gap-4">
+          <img src="logo.jpg" class="w-16 h-16 rounded-full border-2 border-blue-600">
+          <input type="file" class="text-sm">
+        </div>
+        <input type="text" placeholder="Nom" class="w-full border px-4 py-2 rounded">
+        <input type="text" placeholder="Email" class="w-full border px-4 py-2 rounded">
+        <input type="password" placeholder="Nouveau mot de passe" class="w-full border px-4 py-2 rounded">
+        <button class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">Enregistrer les modifications</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="bg-white text-gray-600 text-center py-4 mt-auto">
+© 2025 ScolarPay – Tous droits réservés
+</footer>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+showSection('tableau');
+</script>
+
+</body>
+</html>

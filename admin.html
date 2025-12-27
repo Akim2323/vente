@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ScolarPay | Espace Administrateur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-50 min-h-screen flex flex-col">
+
+<div class="flex flex-grow">
+
+  <!-- MENU LATÉRAL -->
+  <aside class="bg-gradient-to-b from-purple-700 to-purple-600 text-white w-64 min-h-screen p-6 flex flex-col fixed md:relative z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300" id="sidebar">
+    <div class="flex flex-col flex-grow">
+      <div class="flex items-center gap-3 mb-8">
+        <img src="logo.jpg" class="w-12 h-12 rounded-full object-cover">
+        <span class="text-2xl font-bold tracking-wide">ScolarPay</span>
+      </div>
+      <nav class="flex flex-col gap-3 flex-grow">
+        <button onclick="showSection('dashboard')" class="text-left px-4 py-2 rounded hover:bg-purple-500 transition-all duration-200">Tableau de bord</button>
+        <button onclick="showSection('gestionComptes')" class="text-left px-4 py-2 rounded hover:bg-purple-500 transition-all duration-200">Gestion des comptes</button>
+        <button onclick="showSection('gestionFrais')" class="text-left px-4 py-2 rounded hover:bg-purple-500 transition-all duration-200">Gestion des frais scolaires</button>
+        <button onclick="showSection('statistiques')" class="text-left px-4 py-2 rounded hover:bg-purple-500 transition-all duration-200">Statistiques</button>
+        <button onclick="showSection('notifications')" class="text-left px-4 py-2 rounded hover:bg-purple-500 transition-all duration-200">Notifications</button>
+        <button onclick="showSection('historique')" class="text-left px-4 py-2 rounded hover:bg-purple-500 transition-all duration-200">Historique complet</button>
+      </nav>
+    </div>
+    <a href="login.html" class="text-left px-4 py-2 rounded hover:bg-purple-500 transition-all duration-200 mt-auto">Déconnexion</a>
+  </aside>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="flex-grow p-4 md:p-8 ml-0 md:ml-64 transition-all duration-300">
+
+    <!-- MENU MOBILE -->
+    <button class="md:hidden fixed top-4 left-4 bg-purple-600 text-white px-3 py-2 rounded z-50" onclick="toggleSidebar()">Menu</button>
+
+    <!-- TABLEAU DE BORD -->
+    <section id="dashboard" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-purple-800">Tableau de bord Administrateur</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-600 hover:shadow-xl transition-all duration-200">
+          <h3 class="font-semibold mb-2">Total Paiements</h3>
+          <p class="text-gray-600">Montant total : 500 000 FCFA</p>
+          <p class="text-green-600 font-bold">Validés : 400 000 FCFA</p>
+          <p class="text-red-600">En attente : 100 000 FCFA</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-600 hover:shadow-xl transition-all duration-200">
+          <h3 class="font-semibold mb-2">Élèves inscrits</h3>
+          <p class="text-gray-600">Nombre total : 120</p>
+          <p class="text-purple-700 font-bold">Par filière : Science 60 / Lettres 40 / Autres 20</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-600 hover:shadow-xl transition-all duration-200">
+          <h3 class="font-semibold mb-2">Comptables actifs</h3>
+          <p class="text-gray-600">Nombre : 3</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GESTION DES COMPTES -->
+    <section id="gestionComptes" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-purple-800">Gestion des comptes</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-all duration-200">
+        <table class="w-full text-left border-collapse min-w-[700px]">
+          <thead>
+            <tr class="border-b bg-purple-100">
+              <th class="py-3 px-4">Nom</th>
+              <th class="py-3 px-4">Prénom</th>
+              <th class="py-3 px-4">Rôle</th>
+              <th class="py-3 px-4">Email</th>
+              <th class="py-3 px-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition-all duration-150">
+              <td class="py-3 px-4">Dupont</td>
+              <td class="py-3 px-4">Jean</td>
+              <td class="py-3 px-4">Parent</td>
+              <td class="py-3 px-4">jean.dupont@mail.com</td>
+              <td class="flex gap-2 flex-wrap py-3 px-4">
+                <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-all duration-150">Modifier</button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-all duration-150">Supprimer</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="mt-4 bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-all duration-150">Ajouter un compte</button>
+      </div>
+    </section>
+
+    <!-- GESTION DES FRAIS SCOLAIRES -->
+    <section id="gestionFrais" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-purple-800">Gestion des frais scolaires</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-all duration-200">
+        <table class="w-full text-left border-collapse min-w-[700px]">
+          <thead>
+            <tr class="border-b bg-purple-100">
+              <th class="py-3 px-4">Type de frais</th>
+              <th class="py-3 px-4">Montant</th>
+              <th class="py-3 px-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition-all duration-150">
+              <td class="py-3 px-4">Frais de scolarité</td>
+              <td class="py-3 px-4">150 000 FCFA</td>
+              <td class="flex gap-2 flex-wrap py-3 px-4">
+                <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-all duration-150">Modifier</button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-all duration-150">Supprimer</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="mt-4 bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-all duration-150">Ajouter un frais</button>
+      </div>
+    </section>
+
+    <!-- STATISTIQUES -->
+    <section id="statistiques" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-purple-800">Statistiques globales</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200">
+        <p>Total paiements reçus : 500 000 FCFA</p>
+        <p>Élèves inscrits : 120</p>
+        <p>Filières : Science 60 / Lettres 40 / Autres 20</p>
+        <p>Comptables actifs : 3</p>
+        <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all duration-150">Exporter PDF</button>
+      </div>
+    </section>
+
+    <!-- NOTIFICATIONS -->
+    <section id="notifications" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-purple-800">Notifications</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200">
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Paiement reçu de Jean Dupont (25 000 FCFA) – En attente de validation</li>
+          <li>Paiement reçu de Marie Dupont (10 000 FCFA) – Validé</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HISTORIQUE COMPLET -->
+    <section id="historique" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-purple-800">Historique complet</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-all duration-200">
+        <table class="w-full text-left border-collapse min-w-[700px]">
+          <thead>
+            <tr class="border-b bg-purple-100">
+              <th class="py-3 px-4">Date</th>
+              <th class="py-3 px-4">Parent</th>
+              <th class="py-3 px-4">Enfant</th>
+              <th class="py-3 px-4">Type</th>
+              <th class="py-3 px-4">Montant</th>
+              <th class="py-3 px-4">Mode</th>
+              <th class="py-3 px-4">Statut</th>
+              <th class="py-3 px-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition-all duration-150">
+              <td class="py-3 px-4">05/01/2025</td>
+              <td>Jean Dupont</td>
+              <td>Jean Dupont</td>
+              <td>Frais d’inscription</td>
+              <td>50 000 FCFA</td>
+              <td>MTN Mobile Money</td>
+              <td class="text-green-600 font-bold">Validé</td>
+              <td class="flex gap-2 flex-wrap py-3 px-4">
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-all duration-150">Supprimer</button>
+                <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-all duration-150">PDF</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="bg-white text-gray-700 text-center py-4">
+  © 2025 ScolarPay – Espace Administrateur
+</footer>
+
+<script>
+function showSection(sectionId) {
+  ['dashboard','gestionComptes','gestionFrais','statistiques','notifications','historique'].forEach(sec => document.getElementById(sec).classList.add('hidden'));
+  document.getElementById(sectionId).classList.remove('hidden');
+}
+showSection('dashboard');
+
+// Toggle menu mobile
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('-translate-x-full');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ScolarPay | Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen">
+
+<!-- NAVBAR -->
+<nav class="bg-blue-700 text-white px-8 py-4 flex justify-between items-center shadow">
+  <div class="flex items-center gap-3">
+    <img src="logo.jpg" alt="" class="w-10 h-10 rounded-full object-cover">
+    <span class="text-2xl font-bold tracking-wide">ScolarPay</span>
+  </div>
+  <div class="space-x-6 text-sm font-medium">
+    <a href="index.html" class="hover:underline">Accueil</a>
+    <a href="login.html" class="hover:underline">Connexion</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="flex flex-col items-center justify-center text-center px-6 py-24">
+  <span class="text-blue-600 font-semibold uppercase tracking-widest mb-3">
+    Bienvenue sur ScolarPay
+  </span>
+
+  <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
+    La solution moderne pour <br class="hidden md:block"> le paiement scolaire numérique
+  </h2>
+
+  <p class="max-w-2xl text-gray-600 text-lg mb-10">
+    ScolarPay est une plateforme sécurisée conçue pour simplifier la gestion des paiements scolaires.
+    Elle permet aux parents de régler les frais à distance, aux établissements de suivre les encaissements
+    en temps réel et d’assurer une transparence financière totale.
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a href="login.html"
+       class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-3 rounded-lg shadow transition">
+      Accéder à la plateforme
+    </a>
+    <a href="#about"
+       class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-10 py-3 rounded-lg transition">
+      En savoir plus
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <div class="bg-white p-8 rounded-xl shadow text-center">
+      <div class="text-blue-600 text-4xl mb-4">💳</div>
+      <h3 class="font-bold text-lg mb-2">Paiements simplifiés</h3>
+      <p class="text-gray-600 text-sm">
+        Paiement via Mobile Money, carte bancaire, virement ou espèces avec génération automatique de reçus.
+      </p>
+    </div>
+
+    <div class="bg-white p-8 rounded-xl shadow text-center">
+      <div class="text-blue-600 text-4xl mb-4">📊</div>
+      <h3 class="font-bold text-lg mb-2">Suivi en temps réel</h3>
+      <p class="text-gray-600 text-sm">
+        Consultez l’historique des paiements, les soldes restants et les statistiques financières.
+      </p>
+    </div>
+
+    <div class="bg-white p-8 rounded-xl shadow text-center">
+      <div class="text-blue-600 text-4xl mb-4">🔐</div>
+      <h3 class="font-bold text-lg mb-2">Sécurité & transparence</h3>
+      <p class="text-gray-600 text-sm">
+        Toutes les transactions sont sécurisées, tracées et accessibles à tout moment.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-blue-700 text-white text-center py-6">
+  <p class="text-sm">© 2025 ScolarPay — Plateforme de gestion des paiements scolaires</p>
+</footer>
+
+</body>
+</html>

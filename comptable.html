@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ScolarPay | Espace Comptable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 min-h-screen flex flex-col">
+
+<div class="flex flex-grow">
+  <!-- MENU LATÉRAL -->
+  <aside class="bg-gradient-to-b from-green-700 to-green-600 text-white w-64 min-h-screen p-6 flex flex-col">
+    <div class="flex flex-col flex-grow">
+      <div class="flex items-center gap-3 mb-8">
+        <img src="logo.jpg" class="w-12 h-12 rounded-full object-cover">
+        <span class="text-2xl font-bold tracking-wide">ScolarPay</span>
+      </div>
+      <nav class="flex flex-col gap-3 flex-grow">
+        <button onclick="showSection('dashboard')" class="text-left px-4 py-2 rounded hover:bg-green-500 transition-all duration-200">Tableau de bord</button>
+        <button onclick="showSection('paiements')" class="text-left px-4 py-2 rounded hover:bg-green-500 transition-all duration-200">Paiements à valider</button>
+        <button onclick="showSection('etudiants')" class="text-left px-4 py-2 rounded hover:bg-green-500 transition-all duration-200">Liste des étudiants</button>
+        <button onclick="showSection('cours')" class="text-left px-4 py-2 rounded hover:bg-green-500 transition-all duration-200">Cours & Filières</button>
+        <button onclick="showSection('historique')" class="text-left px-4 py-2 rounded hover:bg-green-500 transition-all duration-200">Historique</button>
+        <button onclick="showSection('profil')" class="text-left px-4 py-2 rounded hover:bg-green-500 transition-all duration-200">Profil</button>
+      </nav>
+    </div>
+    <a href="login.html" class="text-left px-4 py-2 rounded hover:bg-green-500 transition-all duration-200 mt-auto">Déconnexion</a>
+  </aside>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="flex-grow p-8 overflow-x-auto">
+
+    <!-- TABLEAU DE BORD -->
+    <section id="dashboard" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-green-800">Tableau de bord Comptable</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600 hover:shadow-xl transition-all duration-200">
+          <h3 class="font-semibold mb-2">Paiements reçus</h3>
+          <p class="text-gray-600">Total : 250 000 FCFA</p>
+          <p class="text-green-600 font-bold">Validés : 200 000 FCFA</p>
+          <p class="text-red-600">En attente : 50 000 FCFA</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600 hover:shadow-xl transition-all duration-200">
+          <h3 class="font-semibold mb-2">Paiements en retard</h3>
+          <p class="text-gray-600">Nombre : 5</p>
+          <p class="text-red-600 font-bold">Montant total : 75 000 FCFA</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600 hover:shadow-xl transition-all duration-200">
+          <h3 class="font-semibold mb-2">Paiements refusés</h3>
+          <p class="text-gray-600">Nombre : 2</p>
+          <p class="text-red-600 font-bold">Montant total : 25 000 FCFA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIEMENTS À VALIDER -->
+    <section id="paiements" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-green-800">Paiements à valider</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-all duration-200">
+        <table class="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr class="border-b bg-green-100">
+              <th class="py-3 px-6">Date</th>
+              <th class="py-3 px-6">Parent</th>
+              <th class="py-3 px-6">Enfant</th>
+              <th class="py-3 px-6">Type de paiement</th>
+              <th class="py-3 px-6">Montant</th>
+              <th class="py-3 px-6">Mode</th>
+              <th class="py-3 px-6">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition-all duration-150">
+              <td class="py-3 px-6">10/01/2025</td>
+              <td>Jean Dupont</td>
+              <td>Jean Dupont</td>
+              <td>Frais de scolarité</td>
+              <td>25 000 FCFA</td>
+              <td>MTN Mobile Money</td>
+              <td class="flex gap-2 flex-wrap">
+                <button class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition-all duration-150">Valider</button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-all duration-150">Rejeter</button>
+                <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-all duration-150">PDF</button>
+                <button class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition-all duration-150">Rembourser</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- LISTE DES ÉTUDIANTS -->
+    <section id="etudiants" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-green-800">Liste des étudiants</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-all duration-200">
+        <table class="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr class="border-b bg-green-100">
+              <th class="py-3 px-6">Nom</th>
+              <th class="py-3 px-6">Prénom</th>
+              <th class="py-3 px-6">Classe</th>
+              <th class="py-3 px-6">Filière</th>
+              <th class="py-3 px-6">Note moyenne</th>
+              <th class="py-3 px-6">Pension à payer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition-all duration-150">
+              <td class="py-3 px-6">Dupont</td>
+              <td class="py-3 px-6">Jean</td>
+              <td class="py-3 px-6">3ème A</td>
+              <td class="py-3 px-6">Science</td>
+              <td class="py-3 px-6">15.5 / 20</td>
+              <td class="py-3 px-6">50 000 FCFA</td>
+            </tr>
+            <tr class="border-b bg-white hover:bg-gray-50 transition-all duration-150">
+              <td class="py-3 px-6">Dupont</td>
+              <td class="py-3 px-6">Marie</td>
+              <td class="py-3 px-6">2nde B</td>
+              <td class="py-3 px-6">Lettres</td>
+              <td class="py-3 px-6">16.2 / 20</td>
+              <td class="py-3 px-6">75 000 FCFA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- COURS ET FILIÈRES -->
+    <section id="cours" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-green-800">Cours & Filières</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-all duration-200">
+        <table class="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr class="border-b bg-green-100">
+              <th class="py-3 px-6">Nom de l'étudiant</th>
+              <th class="py-3 px-6">Cours inscrits</th>
+              <th class="py-3 px-6">Filière</th>
+              <th class="py-3 px-6">Cours à rattraper</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition-all duration-150">
+              <td class="py-3 px-6">Jean Dupont</td>
+              <td class="py-3 px-6">Math, Physique</td>
+              <td class="py-3 px-6">Science</td>
+              <td class="py-3 px-6">Physique</td>
+            </tr>
+            <tr class="border-b bg-white hover:bg-gray-50 transition-all duration-150">
+              <td class="py-3 px-6">Marie Dupont</td>
+              <td class="py-3 px-6">Français, Histoire</td>
+              <td class="py-3 px-6">Lettres</td>
+              <td class="py-3 px-6">Histoire</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HISTORIQUE -->
+    <section id="historique" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-green-800">Historique des paiements</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-all duration-200">
+        <table class="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr class="border-b bg-green-100">
+              <th class="py-3 px-6">Date</th>
+              <th class="py-3 px-6">Parent</th>
+              <th class="py-3 px-6">Enfant</th>
+              <th class="py-3 px-6">Type</th>
+              <th class="py-3 px-6">Montant</th>
+              <th class="py-3 px-6">Mode</th>
+              <th class="py-3 px-6">Statut</th>
+              <th class="py-3 px-6">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-gray-50 hover:bg-gray-100 transition-all duration-150">
+              <td class="py-3 px-6">05/01/2025</td>
+              <td>Jean Dupont</td>
+              <td>Jean Dupont</td>
+              <td>Frais d’inscription</td>
+              <td>50 000 FCFA</td>
+              <td>MTN Mobile Money</td>
+              <td class="text-green-600 font-bold">Validé</td>
+              <td class="flex gap-2 flex-wrap">
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-all duration-150">Supprimer</button>
+                <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-all duration-150">PDF</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PROFIL COMPTABLE -->
+    <section id="profil" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-green-800">Mon profil</h2>
+      <div class="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto hover:shadow-xl transition-all duration-200">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
+          <div class="relative">
+            <img id="photoProfil" src="logo.jpg" alt="Photo profil" class="w-32 h-32 rounded-full object-cover border-4 border-green-600 shadow-md">
+            <input type="file" id="changerPhoto" class="hidden" accept="image/*">
+            <button type="button" 
+                    onclick="document.getElementById('changerPhoto').click()"
+                    class="absolute bottom-0 right-0 bg-green-600 text-white px-3 py-1 text-sm rounded-full hover:bg-green-700 transition-all duration-200">
+              Modifier
+            </button>
+          </div>
+          <div class="flex-1">
+            <div class="mb-4">
+              <label class="block font-medium text-gray-700">Nom complet</label>
+              <input type="text" value="Marie Dupont" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium text-gray-700">Email</label>
+              <input type="email" value="marie.dupont@scolarpay.com" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium text-gray-700">Téléphone</label>
+              <input type="tel" value="+237 690 000 000" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-all duration-200">Enregistrer les modifications</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="bg-white text-gray-700 text-center py-4">
+  © 2025 ScolarPay – Espace Comptable
+</footer>
+
+<script>
+function showSection(sectionId) {
+  ['dashboard','paiements','etudiants','cours','historique','profil'].forEach(sec => document.getElementById(sec).classList.add('hidden'));
+  document.getElementById(sectionId).classList.remove('hidden');
+}
+showSection('dashboard');
+
+// Aperçu instantané de la photo de profil
+const inputPhoto = document.getElementById('changerPhoto');
+const photoProfil = document.getElementById('photoProfil');
+inputPhoto.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      photoProfil.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+</script>
+
+</body>
+</html>
